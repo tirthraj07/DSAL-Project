@@ -9,7 +9,6 @@ public class Book {
         this.title = title;
         this.author = author;
         this.total = total;
-
     }
 
     public boolean isAvailable(){
@@ -24,10 +23,8 @@ public class Book {
         }
 
         System.out.println("Copy issued successfully");
-        
         total--;
         return true;
-
     }
 
     public void returnBook(){

@@ -125,6 +125,8 @@ public class AVLTree {
         preorder(node.left);
         preorder(node.right);
     }
+
+
     
     @Override
     public String toString(){
@@ -149,9 +151,7 @@ public class AVLTree {
                 curr = curr.right;
             }
         }
-
         return null;
-
     }
 
 }

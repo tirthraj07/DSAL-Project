@@ -6,10 +6,23 @@ class Main{
         HashTable ht = new HashTable(5);
         String author = "AMEY KULKARNI";
         ht.insertAuthor(author);
-        ht.insertBook("How to masterbate", author, 5);
-        ht.insertBook("How to shit", author, 5);
+        ht.insertBook("How to master flutter", author, 5);
+        ht.insertBook("How to master iOS", author, 5);
 
-        ht.printTable();
+        String book = "How to master iOS";
+
+        // ht.printTable();
+
+        ht.searchBook(author, "How to master iOS");
+
+        ht.issueBook(author, book);
+
+        ht.searchBook(author, "How to master iOS");
+
+        ht.returnBook(author, book);
+
+        ht.searchBook(author, book);
+
         // System.out.println(ht.searchAuthor("AMEY KULKARNI"));
 
 

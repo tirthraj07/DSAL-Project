@@ -35,6 +35,21 @@ public class HashTable {
         return -1;
     }
 
+    public Node searchBook(String author, String title){
+        int index = searchAuthor(author);
+        if(index==-1){
+            System.out.println("No books of this author available!");
+            return null;
+        }
+        Node node = table.at(index).value.search(title);
+        if(node!=null){
+            System.out.println(node.data);
+            return node;
+        }
+        System.out.println("Book not found!!");
+        return null;
+    }
+
     public void insertBook(String title, String author, int total){
         int index = searchAuthor(author);
         if(index==-1){
@@ -44,6 +59,22 @@ public class HashTable {
 
         table.at(index).value.insert(title, author, total);
 
+    }
+
+    public void issueBook(String author, String title){
+        Node node = searchBook(author, title);
+        if(node==null){
+            return;
+        }
+        node.data.issueBook();
+    }
+
+    public void returnBook(String author, String title){
+        Node node = searchBook(author, title);
+        if(node==null){
+            return;
+        }
+        node.data.returnBook();
     }
 
     public void insertAuthor(String author){

@@ -131,4 +131,27 @@ public class AVLTree {
         inorder(root);
         return "";
     }
+
+    Node search(String title){
+        if(root==null){
+            return null;
+        }
+
+        Node curr = root;
+        while(curr!=null){
+            if(curr.data.title==title){
+                return curr;
+            }
+            else if(curr.isGreaterThan(title)){
+                curr = curr.left;
+            }
+            else{
+                curr = curr.right;
+            }
+        }
+
+        return null;
+
+    }
+
 }

@@ -17,9 +17,17 @@ public class Node {
         return false;
     }   
 
+    public boolean isGreaterThan(String str){
+        return this.data.title.compareToIgnoreCase(str)>0?true:false;
+    }   
+
     public boolean isLessThan(Node obj){
         if(obj!=null) return this.data.title.compareToIgnoreCase(obj.data.title)<0?true:false;
         return false;
+    }
+
+    public boolean isLessThan(String str){
+        return this.data.title.compareToIgnoreCase(str)<0?true:false;
     }
 
 

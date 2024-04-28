@@ -74,7 +74,7 @@ public class AVLTree {
         //CASE1: LL
         
         if(bf > 1 && node.left!=null && newNode.isLessThan(node.left)){
-            System.out.println("LL case");
+            // System.out.println("LL case");
             return(rightRotate(node));
         }
             
@@ -82,14 +82,14 @@ public class AVLTree {
         //CASE2: RR
 
         if(bf < -1&&node.right!=null && newNode.isGreaterThan(node.right)){
-            System.out.println("RR case");
+            // System.out.println("RR case");
             return(leftRotate(node));
         }
 
         //CASE3: LR
         
         if(bf > 1&&node.left!=null && newNode.isGreaterThan(node.left)){
-            System.out.println("LR case");
+            // System.out.println("LR case");
             node.left = leftRotate(node.left);
             return(rightRotate(node));
         }
@@ -97,7 +97,7 @@ public class AVLTree {
         //CASE4: RL
         
         if(bf < -1&&node.right!=null && newNode.isLessThan(node.right)){
-            System.out.println("RL case");
+            // System.out.println("RL case");
             node.right = rightRotate(node.right);
             return(leftRotate(node));
         }

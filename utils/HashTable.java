@@ -43,7 +43,7 @@ public class HashTable {
         }
         Node node = table.at(index).value.search(title);
         if(node!=null){
-            System.out.println(node.data);
+            // System.out.println(node.data);
             return node;
         }
         System.out.println("Book not found!!");
@@ -82,12 +82,13 @@ public class HashTable {
         int index = hashFunction(author);
         if(table.at(index) == null){
             table.insertInTable(index, node);
+            
         }
         else{
             int i = index;
             do{
                 if(table.at(i)==null){
-                    table.insertInTable(index, node);
+                    table.insertInTable(i, node);
                     return;
                 }
                 i = (i+1)%tableSize;

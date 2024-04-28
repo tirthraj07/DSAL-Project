@@ -13,7 +13,7 @@ public class HashNode extends Object {
 
     @Override
     public String toString(){
-        System.out.print(this.key + " :  ");
+        System.out.println(this.key + " :  ");
         return value.toString();
     }
 }

@@ -4,10 +4,13 @@ class Main{
     public static void main(String[] args) {
 
         HashTable ht = new HashTable(5);
+        String author = "AMEY KULKARNI";
+        ht.insertAuthor(author);
+        ht.insertBook("How to masterbate", author, 5);
+        ht.insertBook("How to shit", author, 5);
 
-        ht.insertAuthor("AMEY KULKARNI");
         ht.printTable();
-        System.out.println(ht.searchAuthor("AMEY KULKARNI"));
+        // System.out.println(ht.searchAuthor("AMEY KULKARNI"));
 
 
         // AVLTree tree = new AVLTree();

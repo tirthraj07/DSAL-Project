@@ -23,7 +23,7 @@ public class HashTable {
         }
     }
 
-    public int searchAuthor(String author){
+    private int searchAuthor(String author){
         int index = hashFunction(author);
         int i = index;
         do{
@@ -33,6 +33,17 @@ public class HashTable {
         }
         while(i!=index);
         return -1;
+    }
+
+    public void insertBook(String title, String author, int total){
+        int index = searchAuthor(author);
+        if(index==-1){
+            System.out.println("Cannot find author");
+            return;
+        }
+
+        table.at(index).value.insert(title, author, total);
+
     }
 
     public void insertAuthor(String author){

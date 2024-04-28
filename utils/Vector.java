@@ -3,13 +3,27 @@ package utils;
 public class Vector{
     private HashNode arr[];
     private int count;
+    private int length;
 
     Vector(int length){
+        this.length = length;
         count = 0;
         arr = new HashNode[length];
     }
 
-    public void insert(String key){
+    public int getSize(){
+        return length;
+    }
+
+    public HashNode at(int index){
+        return arr[index];
+    }
+
+    public void insertInTable(int index, HashNode node){
+        arr[index] = node;
+    }
+
+    public void push_back(String key){
         if(count<arr.length){
             arr[count] = new HashNode(key);
             count++;

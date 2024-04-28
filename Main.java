@@ -3,17 +3,24 @@ import utils.*;
 class Main{
     public static void main(String[] args) {
 
-        AVLTree tree = new AVLTree();
-        String author = "AMEY KULKARNI";
+        HashTable ht = new HashTable(5);
 
-        tree.insert("ABC", author, 5);
-        tree.insert("DEF", author, 5);
-        tree.insert("GHI", author, 5);
-        tree.insert("HIJ", author, 5);
-        tree.insert("JLMN", author, 5);
-        tree.insert("OPQR", author, 5);
-        System.out.println(tree);
-        tree.preorderTraversal();
+        ht.insertAuthor("AMEY KULKARNI");
+        ht.printTable();
+        System.out.println(ht.searchAuthor("AMEY KULKARNI"));
+
+
+        // AVLTree tree = new AVLTree();
+        // String author = "AMEY KULKARNI";
+
+        // tree.insert("ABC", author, 5);
+        // tree.insert("DEF", author, 5);
+        // tree.insert("GHI", author, 5);
+        // tree.insert("HIJ", author, 5);
+        // tree.insert("JLMN", author, 5);
+        // tree.insert("OPQR", author, 5);
+        // System.out.println(tree);
+        // tree.preorderTraversal();
 
         // BST tree = new BST();
         // tree.insert("A Game of Thrones");

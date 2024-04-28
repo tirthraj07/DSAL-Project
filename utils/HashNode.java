@@ -5,7 +5,7 @@ public class HashNode extends Object {
     public AVLTree value;   // Books
     public HashNode(String key){
         this.key = key;
-        this.value = null;
+        this.value = new AVLTree();
     }
     public void insertVal(String title, String author, int total){
         value.insert(title, author, total);

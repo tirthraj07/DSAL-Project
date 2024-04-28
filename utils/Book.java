@@ -35,5 +35,10 @@ public class Book {
         System.out.println("Book with Returned Successfully");
     }
 
+    @Override
+    public String toString(){
+        return title + " : " + author + " Available Copies: " + total;
+    }
+
 
 }   

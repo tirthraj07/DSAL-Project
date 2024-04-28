@@ -1,26 +1,26 @@
 package utils;
 
 public class Vector{
-    private String arr[];
+    private HashNode arr[];
     private int count;
 
     Vector(int length){
         count = 0;
-        arr = new String[length];
+        arr = new HashNode[length];
     }
 
-    public void insert(String element){
+    public void insert(String key){
         if(count<arr.length){
-            arr[count] = element;
+            arr[count] = new HashNode(key);
             count++;
         }
         else{
-            String newArr[] = new String[2*count];
+            HashNode newArr[] = new HashNode[2*count];
             for(int i=0; i<count; i++){
                 newArr[i] = arr[i];
             }
             arr = newArr;
-            arr[count] = element;
+            arr[count] = new HashNode(key);
             count++;
         }
     }

@@ -13,11 +13,14 @@ public class Node {
     }    
 
     public boolean isGreaterThan(Node obj){
-        return this.data.title.compareToIgnoreCase(obj.data.title)>0?true:false;
-    } 
+        if(obj!=null) return this.data.title.compareToIgnoreCase(obj.data.title)>0?true:false;
+        return false;
+    }   
 
     public boolean isLessThan(Node obj){
-        return this.data.title.compareToIgnoreCase(obj.data.title)<0?true:false;
+        if(obj!=null) return this.data.title.compareToIgnoreCase(obj.data.title)<0?true:false;
+        return false;
     }
+
 
 }

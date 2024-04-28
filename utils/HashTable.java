@@ -27,12 +27,22 @@ public class HashTable {
         int index = hashFunction(author);
         int i = index;
         do{
-            if(table.at(i).key==author)
+            if(table.at(i).key.equalsIgnoreCase(author))
             return i;
             i = (i+1)%tableSize;
         }
         while(i!=index);
         return -1;
+    }
+
+    public void viewBooksOfAuthors(String author){
+        int index = searchAuthor(author);
+        if(index==-1){
+            System.out.println("No books of this author available!");
+            return;
+        }
+
+        table.at(index).value.inorderTraversal();
     }
 
     public Node searchBook(String author, String title){
@@ -43,7 +53,7 @@ public class HashTable {
         }
         Node node = table.at(index).value.search(title);
         if(node!=null){
-            // System.out.println(node.data);
+            System.out.println(node.data);
             return node;
         }
         System.out.println("Book not found!!");

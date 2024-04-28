@@ -141,7 +141,7 @@ public class AVLTree {
 
         Node curr = root;
         while(curr!=null){
-            if(curr.data.title==title){
+            if(curr.data.title.equalsIgnoreCase(title)){
                 return curr;
             }
             else if(curr.isGreaterThan(title)){

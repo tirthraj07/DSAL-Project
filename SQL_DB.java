@@ -106,33 +106,5 @@ public class SQL_DB {
         }
         return available;
     }
-
-
-    // public static void main(String[] args) {
-    //     // new SQL_DB().RetrieveAuthors();
-
-    //     // for (List<Object> bookInfo : booksForAuthor) {
-    //     //     System.out.println("Book Name: " + bookInfo.get(0));
-    //     //     System.out.println("Total: " + bookInfo.get(1));
-    //     //     System.out.println("Available: " + bookInfo.get(2));
-    //     //     System.out.println();
-    //     // }
-    //     List<String> authors = RetrieveAuthors();
-    //     for(String author: authors){
-    //         int id = findAuthorId(author);
-    //         System.err.println();
-    //         System.err.println();
-    //         System.err.println();
-    //         System.out.println(id+" "+author);
-    //         List<String> bookNames = RetrieveBooks(id);
-    //         for(String book: bookNames){
-    //             System.out.println("Name: "+book);
-    //             int total = FindTotal(book);
-    //             int available = FindAvailable(book);
-    //             System.out.println("Total: "+total);
-    //             System.out.println("Available "+available);
-    //         }
-    //     }
-    // }
-    
+ 
 }

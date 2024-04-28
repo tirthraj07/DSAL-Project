@@ -88,3 +88,13 @@ CREATE TABLE IF NOT EXISTS books (
 );
 ```
 The initiation process involves scanning the authors table and inserting entries into the hash table. Subsequently, each book is inserted with its corresponding author from the authors table, along with the total count of available copies.
+
+---
+## Time Complexity
+Let `n` be the number of authors and `m` be the number of books in the database 
+
+For searching book with author  
+
+**Best Case** : O(1)  
+**Average Case** : O(log m)  
+**Worst Case** : O(n log m)  

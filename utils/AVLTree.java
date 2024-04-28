@@ -1,25 +1,5 @@
 package utils;
 
-class Node{
-    int data;
-    Node left;
-    Node right;
-    int weight;
-
-    public Node(){
-        data = 0;
-        weight = 1;
-        left = right = null;
-    }
-
-    public Node(int data){
-        this.data = data;
-        weight = 1;
-        left = right = null;
-    }
-}
-
-
 public class AVLTree {
 
     public int getWeight(Node node){
@@ -59,15 +39,17 @@ public class AVLTree {
 
 
 
-    Node insertNode(Node node, int data){
+    Node insertNode(Node node, String title, String author, int total){
         if(node==null){
-            return(new Node(data));
+            return(new Node(title,author,total));
         }
-        if(data < node.data){
-            node.left = insertNode(node.left, data);
+        Node newNode = new Node(title,author,total);
+        
+        if(newNode.isLessThan(node)){
+            node.left = insertNode(node.left,title,author,total);
         }
-        else if(data > node.data){
-            node.right = insertNode(node.right, data);
+        else if(newNode.isGreaterThan(node)){
+            node.right = insertNode(node.right,title,author,total);
         }
         else
         return node;
@@ -76,32 +58,32 @@ public class AVLTree {
         int bf = getBalanceFactor(node);
 
         //CASE1: LL
-
-        if(node.left!=null && data < node.left.data && bf > 1){
-            System.out.println("LL case");
+        
+        if(node.left!=null && newNode.isLessThan(node.left) && bf > 1){
+            // System.out.println("LL case");
             return(rightRotate(node));
         }
             
 
         //CASE2: RR
 
-        if(node.right!=null && data > node.right.data && bf < -1){
-            System.out.println(data+"RR case");
+        if(node.right!=null && newNode.isGreaterThan(node.left) && bf < -1){
+            // System.out.println(data+"RR case");
             return(leftRotate(node));
         }
 
         //CASE3: LR
-
-        if(node.left!=null && data > node.left.data && bf > 1){
-            System.out.println("LR case");
+        
+        if(node.left!=null && newNode.isGreaterThan(node.left) && bf > 1){
+            // System.out.println("LR case");
             node.left = leftRotate(node.left);
             return(rightRotate(node));
         }
 
         //CASE4: RL
-
-        if(node.right!=null && data < node.right.data && bf < -1){
-            System.out.println("RL case");
+        
+        if(node.right!=null && newNode.isLessThan(node.right) && bf < -1){
+            // System.out.println("RL case");
             node.right = rightRotate(node.right);
             return(leftRotate(node));
         }

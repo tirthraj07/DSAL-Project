@@ -3,7 +3,6 @@
 ## Contributors
 - Tirthraj Mahajan
 - Advait Joshi
-- Rinit Jain
 
 ---
 
